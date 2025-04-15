@@ -6,14 +6,13 @@ using UnityEngine;
 
 namespace LumsExtras
 {
-    public class Class1 : VNyanInterface.ITriggerHandler {
+    public class LumsExtras : MonoBehaviour, VNyanInterface.ITriggerHandler {
         [DllImport("user32.dll", EntryPoint = "SetWindowPos")]
         private static extern bool SetWindowPos(IntPtr hwnd, int hWndInsertAfter, int x, int Y, int cx, int cy, int wFlags);
         [DllImport("user32.dll", EntryPoint = "FindWindowEx")]
         public static extern IntPtr FindWindowEx(IntPtr parentWindow, IntPtr previousChildWindow, string windowClass, string windowTitle);
         [DllImport("user32.dll", EntryPoint = "GetWindowThreadProcessId")]
         private static extern IntPtr GetWindowThreadProcessId(IntPtr window, out int process);
-
         [DllImport("user32.dll", EntryPoint = "SetWindowLongPtr")]
         private static extern long SetWindowLongPtr64(IntPtr hWnd, int nIndex, long dwNewLong);
         [DllImport("user32.dll", EntryPoint = "GetWindowLongPtr")]
@@ -40,7 +39,6 @@ namespace LumsExtras
             CallVNyan("_lum_dbg_raw", 0, 0, 0, Message, "", "");
         }
         void ErrorHandler(Exception e) {
-            // System.IO.File.WriteAllText(ErrorFile, e.ToString());
             VNyanInterface.VNyanInterface.VNyanParameter.setVNyanParameterString("_lum_ext_err", e.ToString());
             Log("DBG:" + e.ToString());
         }
