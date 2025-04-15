@@ -7,10 +7,10 @@ A (hopefully) growing collection of small useful things that aren't worth puttin
 - Grab the exact camera position/rotation/FOV (e.g. for use with LIV, or Lunazera's additional camera props)
 
 ## Installation:
-Menu -> Settings -> Misc -> Additional settings
-- Allow third party plugins
-- Open plugins folder
-- Extract the contents of the ZIP file into this folder
+1) Menu -> Settings -> Misc -> Additional settings
+2) Allow third party plugins
+3) Open plugins folder
+4) Extract the contents of the ZIP file into this folder
 
 ## Triggers
 ```_lum_ext_setwindow``` - Change the window position and resizability  
