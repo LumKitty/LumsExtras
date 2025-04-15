@@ -11,6 +11,7 @@ A (hopefully) growing collection of small useful things that aren't worth puttin
 2) Allow third party plugins
 3) Open plugins folder
 4) Extract the contents of the ZIP file into this folder
+5) (Optional) Import the example nodegraph to see how to use this
 
 ## Triggers
 ```_lum_ext_setwindow``` - Change the window position and resizability  
