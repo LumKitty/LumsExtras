@@ -6,6 +6,12 @@ A (hopefully) growing collection of small useful things that aren't worth puttin
 - Reposition the VNyan window to specified co-ordinates
 - Grab the exact camera position/rotation/FOV (e.g. for use with LIV, or Lunazera's additional camera props)
 
+## Installation:
+Menu -> Settings -> Misc -> Additional settings
+- Allow third party plugins
+- Open plugins folder
+- Extract the contents of the ZIP file into this folder
+
 ## Triggers
 ```_lum_ext_setwindow``` - Change the window position and resizability  
 num1 - X position of the window  
