@@ -6,10 +6,17 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using static LumsExtras.LumsExtras;
 using UnityEngine.XR;
+using VNyanInterface;
 
 namespace LumsExtras {
 
-        public class LumsExtras : MonoBehaviour, VNyanInterface.ITriggerHandler {
+        public class LumsExtras : IVNyanPluginManifest, VNyanInterface.ITriggerHandler {
+
+        public string PluginName { get; } = "LumsExtras";
+        public string Version    { get; } = "v1.1a";
+        public string Title      { get; } = "Lum's Extras and Tweaks";
+        public string Author     { get; } = "LumKitty";
+        public string Website    { get; } = "https://lum.uk/";
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -67,7 +74,7 @@ namespace LumsExtras {
             VNyanInterface.VNyanInterface.VNyanParameter.setVNyanParameterString("_lum_ext_err", e.ToString());
             Log("DBG:" + e.ToString());
         }
-        public void Awake() {
+        public void InitializePlugin() {
             try {
                 VNyanInterface.VNyanInterface.VNyanTrigger.registerTriggerListener(this);
                 
