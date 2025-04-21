@@ -4,6 +4,8 @@ A (hopefully) growing collection of small useful things that aren't worth puttin
 ## Current features:
 - Disable resizing of the VNyan window (because it's easy to accidentally resize or maximise mid-stream and screw up where your VTuber is on your overlay)
 - Reposition the VNyan window to specified co-ordinates
+- Get current desktop size, main monitor size and number of monitors (e.g. to reposition different based on docked vs undocked laptop etc.)
+- Get current VNyan window size
 - Grab the exact camera position/rotation/FOV (e.g. for use with LIV, or Lunazera's additional camera props)
 
 ## Installation:
@@ -21,6 +23,23 @@ num3 - 1 = Disable window resizing, 2 = Enable window resizing
 
 Note: If you want to position the window at 0,0 you'll need to call it with X and Y set to -99999999 this is because it is impossible for a plugin to distinguish between 0 and a node simply not being hooked up
 
+  
+```_lum_ext_getwindow``` - Get the size and position of the VNyan window
+Sets four variables: 
+- ```_lum_ext_winX```, ```_lum_ext_winY```, ```_lum_ext_winW```, ```_lum_ext_winX```: X, Y, Width Height
+
+If you are using this information as part of an Ordered Execution node, ensure that the trigger is set to run "Now" and not the default "Next Frame" otherwise your query will run before you get the data
+
+  
+```_lum_ext_getdesktop``` - Get the size of your full desktop, size of your main monitor and number of monitors
+Sets five variables:
+- ```_lum_ext_desktopX```, ```_lum_ext_desktopY```: The total size of your entire desktop with all monitors taken into consideration
+- ```_lum_ext_monitorX```, ```_lum_ext_monitorY```: The size of your main monitor only
+- ```_lum_ext_monitors```: The total number of active monitors attached to your computer (disabled monitors are not included)
+
+If you are using this information as part of an Ordered Execution node, ensure that the trigger is set to run "Now" and not the default "Next Frame" otherwise your query will run before you get the data
+
+  
 ```_lum_ext_getcam``` -- Open a notepad window with the exact co-ordinates, rotation and FOV of the current main camera
 
 As with all my plugins, this is free to use, but if you find it useful, consider sending a follow or a raid my way, and if you somehow make millions with it, consider sending me some :D
