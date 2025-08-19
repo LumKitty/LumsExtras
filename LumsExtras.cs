@@ -13,7 +13,7 @@ namespace LumsExtras {
         public class LumsExtras : IVNyanPluginManifest, VNyanInterface.ITriggerHandler {
 
         public string PluginName { get; } = "LumsExtras";
-        public string Version    { get; } = "v1.1a";
+        public string Version    { get; } = "v1.2";
         public string Title      { get; } = "Lum's Extras and Tweaks";
         public string Author     { get; } = "LumKitty";
         public string Website    { get; } = "https://lum.uk/";
@@ -170,6 +170,18 @@ namespace LumsExtras {
                                 startInfo.FileName = "notepad.exe";
                                 startInfo.Arguments = FileName;
                                 Process.Start(startInfo);
+                                break;
+                            case "_setcam":
+                                if (int1 == 1) {
+                                    Camera.main.gateFit = Camera.GateFitMode.Vertical;
+                                } else if (int1 == 2) {
+                                    Camera.main.gateFit = Camera.GateFitMode.Horizontal;
+                                }
+                                if (int2 == 1) {
+                                    Camera.main.usePhysicalProperties = false;
+                                } else if (int2 == 2) {
+                                    Camera.main.usePhysicalProperties = true;
+                                }
                                 break;
                         }
                     }
