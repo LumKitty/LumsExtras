@@ -38,9 +38,12 @@ Sets five variables:
 - ```_lum_ext_monitors```: The total number of active monitors attached to your computer (disabled monitors are not included)
 
 If you are using this information as part of an Ordered Execution node, ensure that the trigger is set to run "Now" and not the default "Next Frame" otherwise your query will run before you get the data
-
   
 ```_lum_ext_getcam``` -- Open a notepad window with the exact co-ordinates, rotation and FOV of the current main camera
+
+```_lum_ext_setcam``` -- Make adjustments to the VNyan camera  
+num1: Affects how your view is scaled when the window is sized to non-16:9 aspect ratios. 1 = VNyan becomes hor+ - 2 = VNyan becomes vert- (default)  
+num2: Enable or disable the "physical camera" distortion effect that simulates lens curvature etc. 1 = disabled - 2 = enabled (default)  
 
 As with all my plugins, this is free to use, but if you find it useful, consider sending a follow or a raid my way, and if you somehow make millions with it, consider sending me some :D
 
